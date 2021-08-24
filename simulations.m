@@ -9,8 +9,6 @@
 % executed without multi-threading.
 %---------------------------------------------------------
 
-if (numel(glob(folderTmpDataDS)) > 0); delete(folderTmpDataDS); end
-pause(0.5);
 if ~exist(folderTmpDataD,'dir') mkdir(folderTmpDataD); end
 if ~exist(folderPrecomputedD,'dir') mkdir(folderPrecomputedD); end
 if ~exist(folderResults,'dir') mkdir(folderResults); end
@@ -70,6 +68,15 @@ end
 %---------------------------------------------------------
 
 if (~(software==1) && (distributedComputation || parallelMode))
+    fprintf ('Clearing temporary folder ... ');
+    while (numel(glob(folderTmpDataDS)) > 0)
+        delete(folderTmpDataDS);
+        pause(0.2)
+        if (numel(glob(folderTmpDataDS)) > 0)
+            pause(5)
+        end
+    end
+	fprintf ('done. \n');
     while length(missingRuns()) > 0
         maxWorkers = str2num(fileread('maxWorkers.txt'));
         runsStartCycle = activeRuns();
