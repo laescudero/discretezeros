@@ -1,6 +1,6 @@
 # Discretezeros
 The present code implements the algorithms and tests specified in the article:
-"Efficient computation of the zeros of the Bargmann transform".
+"Efficient computation of the zeros of the Bargmann transform under additive white noise".
 
 ## Requirements
 - [Octave](https://www.gnu.org/software/octave/index).
