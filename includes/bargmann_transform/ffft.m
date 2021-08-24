@@ -5,8 +5,8 @@ function [ out, fftz ] = ffft(f, alpha, fftz)
 %
 %   Input:
 %
-%   f           :   a matrix that contains the samples of a 2D function.
-%   alpha       :   the threshold that is imposed to obtain zeros.
+%   f           :   a sequence of complex values.
+%   alpha       :   the parameter \alpha used in Eq. (1) in [1].
 %   fftz        :   (optional) the sequence z defined in Eq. (16) in [1].
 %
 %   Output:
