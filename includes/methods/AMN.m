@@ -52,7 +52,7 @@ columnsNumber       =   size(GAFExp,2);
 distanceDelta = 2;
 shifts = shiftsGrid(distanceDelta);
 
-% We store the local minima in the variable matrixResult. 
+% We select points satisfying Eq. (2.7).
 % We use linear indexing to make the comparison with the other neighboring bins.
 % Here we apply the selection step of the algorithm AMN presented in our paper.
 
@@ -72,4 +72,4 @@ end
 
 % The previous line could be commented and replaced by the one below:
 % [answerX, answerY, matrixResult]        = sievingStepNonOrd(GAFExp, matrixResult, separation);
-% This would replace the ordered sieving denoted as Algorithm S1 in our manuscript by one that omits the Step 2 therein defined.
+% This would replace the ordered sieving denoted as Algorithm S1 in our manuscript by one that omits the Step 2 and 3 therein defined.
